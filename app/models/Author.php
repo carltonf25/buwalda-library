@@ -1,5 +1,5 @@
 <?php
-  class Book
+  class Author 
   {
     private $db;
 
@@ -10,13 +10,7 @@
 
     public function getAuthors()
     {
-      $this->db->query('SELECT *,
-                        books.id as bookId,
-                        authors.id as authorId
-                        FROM books 
-                        INNER JOIN authors 
-                        ON books.author_id = authors.id
-                        ');
+      $this->db->query('SELECT * FROM authors');
 
       $results = $this->db->resultSet();
       return $results;

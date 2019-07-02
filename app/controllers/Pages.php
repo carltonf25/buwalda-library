@@ -9,11 +9,11 @@ class Pages extends Controller
     public function index() 
     {
       if (isLoggedIn()) {
-        redirect('posts');
+        redirect('books');
       }
         $data = [
-            'title' => 'Share-Posts',
-            'description' => 'Simple social network built on the PHP-MVC framework'
+            'title' => 'Buwalda Library',
+            'description' => 'Search for a book, or browse by genre'
         ];
 
         $this->view('pages/index', $data);

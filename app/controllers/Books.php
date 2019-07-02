@@ -103,7 +103,7 @@ class Books extends Controller
         // validated
         if($this->postModel->updatePost($data)) {
           flash('post_message', 'Post updated');
-          redirect('posts');
+          redirect('books');
         } else {
           die('Something went wrong');
         }
@@ -117,7 +117,7 @@ class Books extends Controller
       $post = $this->postModel->getPostById($id);
       // check for owner
       if($post->user_id != $_SESSION['user_id']) {
-        redirect('posts');
+        redirect('books');
       }
       $data = [
         'id' => $id,
@@ -148,16 +148,16 @@ class Books extends Controller
       $post = $this->postModel->getPostById($id);
       // check for owner
       if($post->user_id != $_SESSION['user_id']) {
-        redirect('posts');
+        redirect('books');
       }
       if($this->postModel->deletePost($id)) {
         flash('post_message', 'Post Removed');
-        redirect('posts');
+        redirect('books');
       } else {
         die('Something went wrong');
       }
     } else {
-      redirect('posts');
+      redirect('books');
     }
   }
 }
