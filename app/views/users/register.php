@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <div class="card bard-body bg-light mt-5">
+            <div class="card bard-body bg-light mt-5 p-3">
             <h2>Create an Account</h2>
             <p>Please fill out this form to register</p>
             <form action="<?php echo URLROOT; ?>/users/register" method="POST">

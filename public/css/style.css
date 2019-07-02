@@ -1,0 +1,30 @@
+/* everywhere stuff */
+body {
+  background: rgb(223, 231, 233);
+}
+
+nav,
+footer {
+  background: rgb(30, 31, 41);
+}
+nav {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+nav h2 {
+  display: inline-block;
+}
+
+/* books index page */
+.book-card {
+  -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-in-out;
+}
+
+.book-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
