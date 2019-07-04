@@ -12,17 +12,9 @@
 <div class="row mb-4">
   <div class="col-6 m-auto text-center">
     <h2>Search for a book</h2>
-    <input class="col-12" id="bookSearch" type="text" name="search" />
+    <input class="col-12" id="bookSearch" onkeyup="generateBookTable(<?php echo htmlspecialchars(json_encode($data['books']), ENT_QUOTES, 'UTF-8')?>)" type="text" name="search" />
   </div>
 </div>
-<?php foreach($data['books'] as $book) : ?>
-  <div class="card card-body mb-3 book-card">
-    <div class="book-info">
-    <h4 class="card-title"><?php echo $book->title; ?></h4>
-    <span>Written by: <?php echo $book->authorName; ?></span>
-    <br />
-    <span>In stock: <?php echo $book->in_stock; ?></span>
-    </div>
-  </div>
-<?php endforeach; ?>
+<div id="bookTableContainer">
+</div>
 <?php require APPROOT . '/views/inc/footer.php'; ?>
