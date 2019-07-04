@@ -5,6 +5,8 @@ class Users extends Controller
     public function __construct()
     {
         $this->userModel = $this->model('User');
+        $this->bookModel = $this->model('Book');
+        $this->borrowedBookModel = $this->model('BorrowedBook');
     }
 
     public function register()
@@ -181,5 +183,30 @@ class Users extends Controller
       } else {
         return false;
       }
+    }
+
+    public function borrow()
+    {
+        // trim post data
+        $bookId = trim($_POST['bookId']);
+
+        $user = $this->userModel->getUserById($_SESSION['user_id']);
+        $book = $this->bookModel->getBookById($bookId);
+        
+        $borrowed = $this->borrowedBookModel->addBorrowedBook([
+            "userId" => $user->id, 
+            "bookId" => $book->id
+        ]);
+        
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $bookId = trim($_POST['bookId']); 
+
+        if ($borrowed) {
+        flash('register_success', 'Requested to borrow ' . $book->title);
+        redirect('books');
+        } else {
+            flash('alert', 'Something went wrong. Try again.');
+            redirect('books');
+        }
     }
 }

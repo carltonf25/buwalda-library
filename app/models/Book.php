@@ -23,6 +23,34 @@
       return $results;
     }
 
+    public function getBookById($id)
+    {
+      $this->db->query('SELECT * FROM books WHERE id = :id');  
+      $this->db->bind(':id', $id);
+
+      $row = $this->db->single();
+
+      return $row; 
+    }
+
+    public function updateBook($id, $data)
+    {
+
+      $updatedProps = [];
+      foreach ($data as $key => $value) {
+        $updatedProps[$key] = $value;
+      }
+
+      
+      $this->db->query('UPDATE books 
+                        SET title = :title,  
+                            description = :description,
+                            location = :location,
+                            author_id = :author_id
+                        WHERE id = :id');
+      $this->db->bind(':id', $id);
+    }
+
     public function addBook($data)
     {
       $this->db->query('INSERT INTO books (title, description, location, author_id) VALUES(:title, :description, :location, :author_id)');
