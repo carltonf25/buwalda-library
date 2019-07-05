@@ -24,6 +24,12 @@ class Books extends Controller
 
   public function add()
   {
+    $userName = strtolower($_SESSION['user_name']);
+    $isAdmin = ($userName == 'carlton' || $userName == 'stephanie') ? true : false;
+    
+    if (!$isAdmin) {
+      redirect('books');
+    }
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize post array
       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
