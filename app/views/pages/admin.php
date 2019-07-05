@@ -1,5 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <div class="container">
+  <?php flash('admin_message'); ?>
   <h1>Admin Panel</h1>
   <div class="row">
     <div class="col-md-6">
@@ -37,7 +38,12 @@
       <td>${b.authorName}</td>
       <td>${b.userName}</td>
       <td>${b.borrowedDate}</td>
-      <td><a href="<?php echo URLROOT; ?>/borrowedbooks/delete/${b.id}">✔</a></td>
+      <td>
+        <form method="POST" action="<?php echo URLROOT; ?>/borrowedbooks/delete/">
+          <input type="hidden" name="borrowedBookId" value=${b.id} />
+          <input class="emoji-btn" type="submit" value="✔" />
+        </form>
+      </td>
     </tr>
     `
     ))

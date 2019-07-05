@@ -16,6 +16,15 @@ nav h2 {
   display: inline-block;
 }
 
+nav h2 a {
+  color: #fff;
+}
+
+nav h2 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* books index page */
 .book-card {
   -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
@@ -43,6 +52,10 @@ tr {
 }
 
 tr:hover {
-  cursor: pointer;
   background: rgb(243, 240, 240);
+}
+
+.emoji-btn {
+  background: none;
+  border: none;
 }
