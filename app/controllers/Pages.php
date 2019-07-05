@@ -28,6 +28,11 @@ class Pages extends Controller
 
     public function admin() 
     {
+      $userName = strtolower($_SESSION['user_name']);
+      $isAdmin = ($userName == 'carlton' || $userName == 'stephanie') ? true : false;
+      if (!$isAdmin) {
+        redirect('books');
+      } 
         $borrowed = $this->borrowedBooksModel->getBorrowedBooks();
 
         $data = [

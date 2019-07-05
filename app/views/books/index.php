@@ -7,7 +7,7 @@ $urlRoot = URLROOT;
 <div class="row">
 </div>
 <div class="row mb-4">
-  <div class="col-6 m-auto text-center">
+  <div class="col-10 m-auto text-center">
     <h1>Search for a book</h1>
     <input class="col-12" id="bookSearch" onkeyup="generateBookTable(
     <?php echo htmlspecialchars(json_encode($data['books']), ENT_QUOTES, 'UTF-8')?>
