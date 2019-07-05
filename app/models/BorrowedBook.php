@@ -10,17 +10,36 @@
 
     public function getBorrowedBooks()
     {
-        $this->db->query('SELECT *,
-                        borrowed_books.book_id as bookId,
-                        borrowed_books.user_id as userId,
-                        FROM borrowed_books
-                        JOIN users
-                        ON user.id = borrowed_books.user_id
-                        JOIN books
-                        ON book.id = borrowed_books.book_id
-                        ');
+        $this->db->query('SELECT 
+                            borrowed_books.id as id,
+                            books.title as bookTitle,
+                            users.name as userName, 
+                            authors.name as authorName,
+                            borrowed_books.borrowed_at as borrowedDate
+                            FROM borrowed_books 
+                            INNER JOIN users 
+                            ON users.id = borrowed_books.user_id 
+                            INNER JOIN books 
+                            ON books.id = borrowed_books.book_id
+                            INNER JOIN authors
+                            ON books.author_id = authors.id
+                            ');
         $results = $this->db->resultSet();
-        return results;
+        return $results;
+    }
+
+    public function delete($id)
+    {
+        $this->db->query('DELETE FROM borrowed_books where borrowed_books.id = :id');
+        $this->db->bind(':id', $id);
+        
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
     
     public function addBorrowedBook($data)

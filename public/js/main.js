@@ -24,11 +24,10 @@ generateBookTable = data => {
             <h4 class="card-title">${book.title}</h4>
             <span>Written by: ${book.authorName}</span>
             <br />
-            <span>In stock: ${book.in_stock}</span>
           </div>
             <form method="POST" action="users/borrow">
               <input type="hidden" name="bookId" value=${book.bookId} />
-              <input type="submit" name="class="btn btn-primary ml-auto" value="Borrow" /> 
+              <input type="submit" class="btn btn-primary ml-auto" value="Borrow" /> 
             </form>
         </div>
       `
@@ -36,3 +35,5 @@ generateBookTable = data => {
     container.innerHTML = tableContent;
   }
 };
+
+

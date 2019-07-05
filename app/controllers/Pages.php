@@ -4,6 +4,7 @@ class Pages extends Controller
 {
     public function __construct()
     {
+      $this->borrowedBooksModel = $this->model('BorrowedBook'); 
     }
 
     public function index() 
@@ -21,7 +22,18 @@ class Pages extends Controller
 
     public function about() 
     {
-        $data = ['title' => 'About Us', 'description' => 'App to share posts among users'];
+        $data = ['title' => 'About Us', 'description' => 'Our little at-home library'];
         $this->view('pages/about', $data);
+    }
+
+    public function admin() 
+    {
+        $borrowed = $this->borrowedBooksModel->getBorrowedBooks();
+
+        $data = [
+        "borrowedBooks" => $borrowed  
+        ];
+
+        $this->view('pages/admin', $data);
     }
 }

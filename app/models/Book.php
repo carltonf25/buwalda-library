@@ -15,7 +15,7 @@
                         authors.id as authorId,
                         authors.name as authorName
                         FROM books
-                        INNER JOIN authors
+                        JOIN authors
                         ON authors.id = books.author_id
                         ');
 

@@ -5,21 +5,10 @@ $urlRoot = URLROOT;
 <?php flash('register_success'); ?>
 <?php flash('alert'); ?>
 <div class="row">
-  <div class="col-md-6">
-  <h1>Books</h1>
-  </div>
-  <div class="col-md-6">
-    <a href="<?php echo $urlRoot?>/books/add" class="btn btn-primary pull-right">
-      <i class="fa fa-pencil"></i> Add Book 
-    </a>
-  </div>
 </div>
-<?php 
-var_dump($_SESSION['user_id']);
-?>
 <div class="row mb-4">
   <div class="col-6 m-auto text-center">
-    <h2>Search for a book</h2>
+    <h1>Search for a book</h1>
     <input class="col-12" id="bookSearch" onkeyup="generateBookTable(
     <?php echo htmlspecialchars(json_encode($data['books']), ENT_QUOTES, 'UTF-8')?>
     )" 

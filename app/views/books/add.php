@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-    <a href="<?php echo URLROOT;?>/books" class="btn btn-light"><i class="fa fa-backward mr-auto"></i> Back</a>
-      <div class="card bard-body bg-light mt-5">
+    <a href="<?php echo URLROOT;?>/pages/admin" class="btn btn-light"><i class="fa fa-backward mr-auto"></i> Back</a>
+      <div class="card bard-body bg-light p-4 mt-5">
       <?php flash('register_success'); ?>
       <h2>Add Book</h2>
       <p>Create a book</p>
