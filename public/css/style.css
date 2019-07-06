@@ -3,6 +3,15 @@ body {
   background: rgb(223, 231, 233);
 }
 
+a {
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 nav,
 footer {
   background: rgb(30, 31, 41);
