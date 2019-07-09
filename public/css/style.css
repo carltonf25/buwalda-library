@@ -152,6 +152,8 @@ button:focus, input[type="submit"]:focus{
 
 th {
   font-weight: normal;
+  background: #3b1f2b !important;
+  color: #fbfbfb;
 }
 tr {
   transition: 0.2s ease-in-out;
@@ -164,4 +166,9 @@ tr:hover {
 .emoji-btn {
   background: none;
   border: none;
+
+}
+
+.emoji-btn:hover {
+  color: #fbfbfb;
 }

@@ -11,7 +11,7 @@
             <th scope="col">Author</th>
             <th scope="col">Borrower</th>
             <th scope="col">Borrow Date</th>
-            <th scope="col">Confirm Return</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody id="borrowed-table-body">
@@ -33,12 +33,12 @@
       <td>
         <form method="POST" action="<?php echo URLROOT; ?>/borrowedbooks/delete/">
           <input type="hidden" name="borrowedBookId" value=${b.id} />
-          <input class="emoji-btn" type="submit" value="✔" />
+          <input class="emoji-btn btn" type="submit" value="Confirm Return" />
         </form>
       </td>
     </tr>
     `
-    ))
+    )).join('');
 
     container.innerHTML = table;
   }
