@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/admin-header.php'; ?>
     <a href="<?php echo URLROOT;?>/pages/admin" class="btn btn-light"><i class="fa fa-backward mr-auto"></i> Back</a>
       <div class="card bard-body bg-light p-4 mt-5">
       <?php flash('register_success'); ?>

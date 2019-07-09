@@ -11,5 +11,5 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <?php require APPROOT . '/views/inc/navbar.php'; ?>
+    <?php require APPROOT . '/views/inc/admin-navbar.php'; ?>
     <div class="container">

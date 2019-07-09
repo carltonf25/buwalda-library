@@ -1,6 +1,7 @@
 /* everywhere stuff */
 body {
-  background: rgb(223, 231, 233);
+  background: rgb(223, 231, 233); 
+  font-family: 'Libre Baskerville', serif;
 }
 
 a {
@@ -12,13 +13,24 @@ a:hover {
   text-decoration: none;
 }
 
-nav,
-footer {
-  background: rgb(30, 31, 41);
+.site-header {
+  background: #3b1f2b;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
+
 nav {
   margin-bottom: 20px;
   color: #fff;
+}
+
+nav a {
+  color: #fbfbfb;
+}
+
+nav a:hover {
+  color: #cecccc;
 }
 
 nav h2 {
@@ -34,6 +46,31 @@ nav h2 a:hover {
   text-decoration: none;
 }
 
+button, input[type="submit"], btn {
+  background: #3b1f2b!important;
+  color: #fbfbfb;
+  transition: 0.2s ease-in-out;
+  border: none;
+  -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #582e40;
+  transform: scale(1.02);
+}
+
+button:active, input[type="submit"]:active{
+  background: #582e40!important;
+  transform: scale(1.03);
+}
+
+button:focus, input[type="submit"]:focus{
+  background: #582e40!important;
+  transform: scale(1.02);
+}
+
 /* books index page */
 .book-card {
   -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
@@ -42,7 +79,7 @@ nav h2 a:hover {
   transition: 0.2s ease-in-out;
   padding: 0;
   display: grid;
-  grid-template-columns: 150px auto 100px;
+  grid-template-columns: 150px auto auto;
   grid-template-rows: auto;
   grid-column-gap: 40px;
   align-items: center;
@@ -79,7 +116,8 @@ nav h2 a:hover {
 }
 
 #bookSearch {
-  border: none;
+  border: 1px solid #3b1f2b;
+  background: none;
   height: 3em;
   -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
@@ -87,6 +125,34 @@ nav h2 a:hover {
 }
 
 /* admin panel styles */
+.admin-header {
+  background: #fcc631;
+  color: #000;
+}
+
+.site-header a {
+  transition: 0.2s ease-in-out;
+}
+
+.site-header a:hover {
+  transform: scale(1.03);
+}
+
+.admin-header a {
+  color: #000;
+}
+
+.admin-header a:hover {
+  color: rgb(54, 54, 54);
+} 
+
+.admin-header h2 a{
+  color: #000;
+}
+
+th {
+  font-weight: normal;
+}
 tr {
   transition: 0.2s ease-in-out;
 }

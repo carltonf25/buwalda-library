@@ -1,14 +1,6 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/admin-header.php'; ?>
 <div class="container">
   <?php flash('admin_message'); ?>
-  <h1>Admin Panel</h1>
-  <div class="row">
-    <div class="col-md-6">
-      <a href="<?php echo URLROOT; ?>/books/add" class="btn btn-primary pull-right">
-        <i class="fa fa-pencil"></i> Add Book
-      </a>
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-10 m-auto mt-4">
     <h2 class="text-center">Borrowed Books</h2>
