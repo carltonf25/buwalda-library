@@ -21,9 +21,14 @@
               <input type="text" name="location" class="form-control form-control-lg" value="<?php echo $data['location']; ?>" />
           </div>
           <div class="form-group">
-              <label for="Author_ID">Author #: <sup>*</sup></label> 
-              <input type="number" name="author_id" class="form-control form-control-lg" value="<?php echo $data['author_id']; ?>" />
+              <label for="author_name">Author Name: <sup>*</sup></label> 
+              <input type="number" name="author_name" class="form-control form-control-lg" value="<?php echo $data['author_name']; ?>" />
           </div>
+          <div class="form-group">
+              <label for="img_url">Book Image URL: <sup>*</sup></label> 
+              <input type="text" name="img_url" class="form-control form-control-lg" value="<?php echo $data['img_url']; ?>" />
+          </div>
+          
           <input type="submit" value="Submit" class="btn btn-success" />
       </form>
       </div>

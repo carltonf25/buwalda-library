@@ -23,6 +23,7 @@
                             ON books.id = borrowed_books.book_id
                             INNER JOIN authors
                             ON books.author_id = authors.id
+                            ORDER BY borrowed_books.borrowed_at DESC
                             ');
         $results = $this->db->resultSet();
         return $results;
