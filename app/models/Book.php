@@ -47,18 +47,25 @@
                             description = :description,
                             location = :location,
                             author_id = :author_id
+                            img_url = :img_url
                         WHERE id = :id');
+                        
       $this->db->bind(':id', $id);
+      $this->db->bind(':description', $data['description']);
+      $this->db->bind(':location', $data['location']);
+      $this->db->bind(':author_id', $data['author_id']);
+      $this->db->bind(':img_url', $data['img_url']);
     }
 
     public function addBook($data)
     {
-      $this->db->query('INSERT INTO books (title, description, location, author_id) VALUES(:title, :description, :location, :author_id)');
+      $this->db->query('INSERT INTO books (title, description, location, author_id, img_url) VALUES(:title, :description, :location, :author_id, :img_url)');
 
       $this->db->bind(':title', $data['title']);
       $this->db->bind(':description', $data['description']);
       $this->db->bind(':location', $data['location']);
       $this->db->bind(':author_id', $data['author_id']);
+      $this->db->bind(':img_url', $data['img_url']);
 
       // Execute
       if ($this->db->execute()) {

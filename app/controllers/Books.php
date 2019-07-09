@@ -39,6 +39,7 @@ class Books extends Controller
         'description' => trim($_POST['description']),
         'location' => trim($_POST['location']),
         'author_id' => trim($_POST['author_id']),
+        'img_url' => trim($_POST['img_url']),
         'user_id' => $_SESSION['user_id'],
         'title_err' => '',
         'description_err' => '',

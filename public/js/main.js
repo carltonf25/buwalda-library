@@ -20,18 +20,18 @@ generateBookTable = data => {
       book =>
         `
         <div class="card card-body mb-3 book-card">
-          <div class="book-info pull-left">
-            <h4 class="card-title">${book.title}</h4>
-            <span>Written by: ${book.authorName}</span>
-            <br />
+          <img class="book-img" src=${book.img_url || "https://www.bookamo.com/img/book_placeholder.png"} /> 
+          <div class="book-info">
+                <h4 class="card-title">${book.title}</h4>
+                <small><i>Written by: ${book.authorName}</i></small>
           </div>
-            <form method="POST" action="users/borrow">
-              <input type="hidden" name="bookId" value=${book.bookId} />
-              <input type="submit" class="btn btn-primary ml-auto" value="Borrow" /> 
-            </form>
+          <form class="ml-auto" method="POST" action="users/borrow">
+            <input type="hidden" name="bookId" value=${book.bookId} />
+            <input type="submit" class="btn btn-primary ml-auto" value="Borrow" /> 
+          </form>
         </div>
       `
-    );
+    ).join('');
     container.innerHTML = tableContent;
   }
 };

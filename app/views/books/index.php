@@ -15,6 +15,6 @@ $urlRoot = URLROOT;
       type="text" name="search" />
   </div>
 </div>
-<div id="bookTableContainer">
+<div class="col-12" id="bookTableContainer">
 </div>
 <?php require APPROOT . '/views/inc/footer.php'; ?>

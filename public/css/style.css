@@ -40,11 +40,41 @@ nav h2 a:hover {
   -moz-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
   transition: 0.2s ease-in-out;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 150px auto 100px;
+  grid-template-rows: auto;
+  grid-column-gap: 40px;
+  align-items: center;
 }
 
 .book-card:hover {
   transform: scale(1.02);
   cursor: pointer;
+}
+
+.book-info h4 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.book-card div {
+}
+
+.book-card form {
+  padding: 15px;
+}
+
+.book-img {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 150px;
+}
+
+.title-author-section {
+}
+
+.title-author-section h4 {
 }
 
 #bookSearch {
