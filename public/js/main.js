@@ -4,16 +4,16 @@ generateBookTable = data => {
   let searchBar = document.getElementById("bookSearch");
   let container = document.getElementById("bookTableContainer");
   console.log(searchBar.innerText);
-  // blank out previous results
-  container.innerHTML = ``;
-
+  
   // Filter book data to only items that match the search query
   let filteredData = data.filter(book =>
     book.title.toLowerCase().includes(searchBar.value.toLowerCase())
   );
   // Handle search queries with no matches
-  if (filteredData < 1) {
+  if (filteredData < 1 ) {
     container.innerHTML = `<p>No results found</p>`;
+  } else if (searchBar.value == '') {
+    container.innerHTML = ``;
   } else {
     // build HTML for query results, then append to the container
     let tableContent = filteredData.map(

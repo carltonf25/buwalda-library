@@ -1,5 +1,8 @@
 <?php require APPROOT . '/views/inc/admin-header.php'; ?>
 <div class="container">
+  <a href="<?php echo URLROOT;?>/books" class="btn btn-light">
+    <i class="fa fa-backward mr-auto"></i> Back to Book Search
+  </a>
   <?php flash('admin_message'); ?>
   <div class="row">
     <div class="col-md-10 m-auto mt-4">
