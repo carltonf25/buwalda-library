@@ -95,9 +95,6 @@ button:focus, input[type="submit"]:focus{
   grid-row-end: 3;
 }
 
-.book-card div {
-}
-
 .book-card form {
   padding: 15px;
 }
@@ -107,12 +104,6 @@ button:focus, input[type="submit"]:focus{
   grid-row-end: 2;
   width: 150px;
   max-height: 180px;
-}
-
-.title-author-section {
-}
-
-.title-author-section h4 {
 }
 
 #bookSearch {
