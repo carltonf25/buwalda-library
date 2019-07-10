@@ -6,10 +6,7 @@ class Mailers extends Controller
   {
     $this->bookModel = $this->model('Book');
     $this->userModel = $this->model('User');
-    $this->username = urlencode('Fire Island');
     $this->apiKey = API_KEY;
-    $this->domain = "sandbox0b65a44345d140a690d3d9f0ea1d720b.mailgun.org";
-    $this->baseUrl = "https://api:$this->apiKey@api.mailgun.net/v3/$this->domain";
     $this->client = new Mandrill($this->apiKey);
   }
 
