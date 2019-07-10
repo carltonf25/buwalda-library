@@ -1,5 +1,6 @@
 <?php
 
+require_once('Mailers.php');
 class Users extends Controller
 {
     public function __construct()
@@ -202,8 +203,11 @@ class Users extends Controller
         $bookId = trim($_POST['bookId']); 
 
         if ($borrowed) {
-        flash('register_success', 'Requested to borrow ' . $book->title);
-        redirect('books');
+        // send notification email
+            $mailer = new Mailers;
+            $mailer->sendBorrowNotification($user->name, $book->title);
+            flash('register_success', 'Requested to borrow ' . $book->title);
+            redirect('books');
         } else {
             flash('alert', 'Something went wrong. Try again.');
             redirect('books');
