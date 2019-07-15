@@ -33,28 +33,21 @@
       return $row; 
     }
 
-    public function updateBook($id, $data)
+    public function updateBook($id, $prop, $value)
     {
-
-      $updatedProps = [];
-      foreach ($data as $key => $value) {
-        $updatedProps[$key] = $value;
-      }
-
-      
       $this->db->query('UPDATE books 
-                        SET title = :title,  
-                            description = :description,
-                            location = :location,
-                            author_id = :author_id
-                            img_url = :img_url
-                        WHERE id = :id');
+                        SET ' . $prop . ' = ' . $value . '
+                        WHERE id = ' . $id);
                         
       $this->db->bind(':id', $id);
-      $this->db->bind(':description', $data['description']);
-      $this->db->bind(':location', $data['location']);
-      $this->db->bind(':author_id', $data['author_id']);
-      $this->db->bind(':img_url', $data['img_url']);
+      $this->db->bind(':prop', $prop);
+      $this->db->bind(':value', $value);
+
+      if ($this->db->execute()) {
+        return true;
+      } else {
+        return false;
+      }
     }
 
     public function addBook($data)

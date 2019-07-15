@@ -36,7 +36,7 @@
       <td>
         <form method="POST" action="<?php echo URLROOT; ?>/borrowedbooks/delete/">
           <input type="hidden" name="borrowedBookId" value=${b.id} />
-          <input class="emoji-btn btn" type="submit" value="Confirm Return" />
+          <input class="btn btn-primary " type="submit" value="Confirm Return" />
         </form>
       </td>
     </tr>

@@ -203,6 +203,8 @@ class Users extends Controller
         $bookId = trim($_POST['bookId']); 
 
         if ($borrowed) {
+        // update book record to show it is no longer in stock
+        $this->bookModel->updateBook($bookId, "in_stock", 0);
         // send notification email
             $mailer = new Mailers;
             $mailer->sendBorrowNotification($user->name, $book->title);
