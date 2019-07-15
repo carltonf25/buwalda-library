@@ -7,14 +7,30 @@ class Books extends Controller
     if(!isLoggedIn()) {
       redirect('users/login');
     }
+    $this->testVal = 'test';
     $this->bookModel = $this->model('Book');
     $this->userModel = $this->model('User');
+    $this->borrowedBookModel = $this->model('BorrowedBook');
   }
 
   public function index()
   {
-    // Get posts
     $books = $this->bookModel->getBooks();
+    $borrowedBooks = $this->borrowedBookModel->getBorrowedBookIds();
+    $borrowedIdList = [];
+
+    foreach ($borrowedBooks as $book) {
+      array_push($borrowedIdList, $book->book_id);
+    }
+
+    foreach ($books as $book) {
+      if (in_array($book->bookId, $borrowedIdList)) {
+        $book->borrowed = true;
+      } else if (!in_array($book->bookId, $borrowedIdList)) {
+        $book->borrowed = false;
+      }
+    }
+
     $data = [
       'books' => $books
     ];

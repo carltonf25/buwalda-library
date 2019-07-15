@@ -1,5 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; 
 ?>
+<style>
+</style>
 <?php flash('register_success'); ?>
 <?php flash('alert'); ?>
 <div class="row">

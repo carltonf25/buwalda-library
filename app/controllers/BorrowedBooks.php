@@ -123,7 +123,11 @@ class BorrowedBooks extends Controller
   {
       $id = trim($_POST['borrowedBookId']);
 
+        // update book record in db
+        $this->bookModel->updateBook($id, "in_stock", 1);
+
       if($this->borrowedBookModel->delete($id)) {
+
         flash('admin_message', 'Marked book as returned!');
         redirect('pages/admin');
       } else {

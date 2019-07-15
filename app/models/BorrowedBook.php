@@ -8,6 +8,25 @@
           $this->db = new Database;
       }
 
+    public function getBorrowedBookIds()
+    {
+        $this->db->query('SELECT borrowed_books.book_id FROM borrowed_books');
+        $results = $this->db->resultSet();
+        return $results;
+
+    }
+
+    public function isBorrowed($id)
+    {
+        $borrowedBooks = $this->getBorrowedBookIds();
+
+        if (in_array($id, $borrowedBooks)) {
+        return true;
+        } else {
+        return false;
+        }
+    }
+
     public function getBorrowedBooks()
     {
         $this->db->query('SELECT 
@@ -41,6 +60,20 @@
         }
 
 
+    }
+
+    public function getByBookId($id)
+    {
+        $this->db->query('SELECT book_id, user_id from borrowed_books WHERE book_id = :id');
+
+        $this->db->bind(':id', $id);
+
+        // Execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public function addBorrowedBook($data)
