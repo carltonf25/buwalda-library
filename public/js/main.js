@@ -13,7 +13,6 @@ generateBookTable = data => {
     container.innerHTML = `<p>No results found</p>`;
   } else if (searchBar.value == '') {
     container.innerHTML = ``;
-
   } else {
     // build HTML for query results, then append to the container
     let tableContent = filteredData.map(

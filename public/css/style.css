@@ -172,6 +172,10 @@ tr:hover {
 
 /* disabled status for borrowed books */
 
+.disabled {
+  pointer-events: none;
+}
+
 .book-card input.disabled, button.disabled, .book-card btn-primary.disabled {
   opacity: .1;
   cursor: default;
