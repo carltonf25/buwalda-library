@@ -10,7 +10,7 @@
   <div class="col-10 m-auto text-center">
   <?php
   ?>
-    <h1>Search for a book</h1>
+    <h2>Search for a book</h2>
     <input class="col-9" id="bookSearch" onkeyup="generateBookTable(
     <?php echo htmlspecialchars(json_encode($data['books']), ENT_QUOTES, 'UTF-8')?>
     )" 

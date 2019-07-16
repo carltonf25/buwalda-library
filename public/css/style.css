@@ -13,6 +13,15 @@ a:hover {
   text-decoration: none;
 }
 
+form {
+  font-size: 14px;
+}
+
+form input[type="text"], form textarea {
+  font-size: 14px;
+}
+
+
 .site-header {
   background: #3b1f2b;
   height: 80px;
@@ -54,7 +63,7 @@ nav h2 a:hover {
   text-decoration: none;
 }
 
-.book-card button, .book-card input[type="submit"], tr input[type="submit"] {
+.book-card button, .book-card input[type="submit"], input[type="submit"] {
   background: #3b1f2b;
   color: #fbfbfb;
   transition: 0.2s ease-in-out;
@@ -64,17 +73,17 @@ nav h2 a:hover {
   box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.3);
 }
 
-.book-card button:hover, .book-card input[type="submit"]:hover, tr input[type="submit"]:hover{
+.book-card button:hover, .book-card input[type="submit"]:hover, input[type="submit"]:hover{
   background: #582e40;
   transform: scale(1.02);
 }
 
-.book-card button:active, .book-card input[type="submit"]:active, tr input[type="submit"]:active {
+.book-card button:active, .book-card input[type="submit"]:active, input[type="submit"]:active {
   background: #582e40;
   transform: scale(1.03);
 }
 
-.book-card button:focus, .book-card input[type="submit"]:focus, tr input[type="submit"]:focus {
+.book-card button:focus, .book-card input[type="submit"]:focus, input[type="submit"]:focus {
   background: #582e40;
   transform: scale(1.02);
 }

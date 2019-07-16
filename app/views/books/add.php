@@ -1,9 +1,8 @@
 <?php require APPROOT . '/views/inc/admin-header.php'; ?>
-    <a href="<?php echo URLROOT;?>/pages/admin" class="btn btn-light"><i class="fa fa-backward mr-auto"></i> Back</a>
+    <a href="<?php echo URLROOT;?>/pages/admin" class="btn btn-dark"><i class="fa fa-backward mr-auto"></i> Back</a>
       <div class="card bard-body bg-light p-4 mt-5">
       <?php flash('register_success'); ?>
-      <h2>Add Book</h2>
-      <p>Create a book</p>
+      <h3>Add Book</h3>
       <form action="<?php echo URLROOT; ?>/books/add" method="POST">
           <div class="form-group">
               <label for="Title">Title: <sup>*</sup></label> 
@@ -17,15 +16,15 @@
               </textarea>
           </div>
           <div class="form-group">
-              <label for="Location">Location: <sup>*</sup></label> 
-              <input type="text" name="location" class="form-control form-control-lg" value="<?php echo $data['location']; ?>" />
-          </div>
-          <div class="form-group">
               <label for="author_name">Author Name: <sup>*</sup></label> 
-              <input type="number" name="author_name" class="form-control form-control-lg" value="<?php echo $data['author_name']; ?>" />
-          </div>
+              <input type="text" name="author_name" class="form-control form-control-lg" value="<?php echo $data['author_name']; ?>" />
+            </div>
+            <div class="form-group">
+                <label for="Location">Location: </label> 
+                <input type="text" name="location" class="form-control form-control-lg" value="<?php echo $data['location']; ?>" />
+            </div>
           <div class="form-group">
-              <label for="img_url">Book Image URL: <sup>*</sup></label> 
+              <label for="img_url">Book Image URL:</label> 
               <input type="text" name="img_url" class="form-control form-control-lg" value="<?php echo $data['img_url']; ?>" />
           </div>
           
