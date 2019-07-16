@@ -100,7 +100,7 @@ class BorrowedBooks extends Controller
 
       } else {
         // Load view with errors
-        $this->view('posts/edit', $data);
+        $this->view('borrowedbooks/edit', $data);
       }
 
     } else {
@@ -115,7 +115,7 @@ class BorrowedBooks extends Controller
         'body' => $post->body
       ];
 
-      $this->view('posts/edit', $data);
+      $this->view('borrowedbooks/edit', $data);
     }
   }
 

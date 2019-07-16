@@ -133,7 +133,7 @@ class Books extends Controller
 
       } else {
         // Load view with errors
-        $this->view('posts/edit', $data);
+        $this->view('books/edit', $data);
       }
 
     } else {
@@ -148,7 +148,7 @@ class Books extends Controller
         'body' => $post->body
       ];
 
-      $this->view('posts/edit', $data);
+      $this->view('books/edit', $data);
     }
   }
 
@@ -162,7 +162,7 @@ class Books extends Controller
       'user' => $user
     ];
 
-    $this->view('posts/show', $data);
+    $this->view('books/show', $data);
   }
 
   public function delete($id)
