@@ -20,6 +20,14 @@ a:hover {
   align-items: center;
 }
 
+.header-links {
+  font-size: 14px;
+}
+
+.header-links a {
+  margin-left: 1em;
+}
+
 nav {
   margin-bottom: 20px;
   color: #fff;
