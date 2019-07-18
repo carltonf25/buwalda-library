@@ -119,7 +119,7 @@ nav h2 a:hover {
   grid-row-start: 1;
   grid-row-end: 2;
   width: 150px;
-  max-height: 180px;
+  height: 125px;
 }
 
 #bookSearch {
@@ -175,6 +175,8 @@ tr:hover {
 .disabled {
   pointer-events: none;
 }
+
+
 
 .book-card input.disabled, button.disabled, .book-card btn-primary.disabled {
   opacity: .1;

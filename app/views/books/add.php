@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/admin-header.php'; ?>
 <a href="<?php echo URLROOT; ?>/pages/admin" class="btn btn-dark"><i class="fa fa-backward mr-auto"></i> Back</a>
 <div class="card bard-body bg-light p-4 mt-5">
-    <?php flash('register_success'); ?>
+    <?php flash('success_message'); ?>
     <h3>Add Book</h3>
     <form action="<?php echo URLROOT; ?>/books/add" method="POST">
         <div class="form-group">

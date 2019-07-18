@@ -62,6 +62,7 @@
 
          $this->stmt->bindValue($param, $value, $type);
      }
+
      // Execute the prepared statement
      public function execute()
      {
