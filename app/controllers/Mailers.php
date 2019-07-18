@@ -15,12 +15,13 @@ class Mailers extends Controller
 
     try {
       // Mandrill client implementation
+      $template_name = 'borrow-notification';
+      $template_content = array(
+        array(
+          'content' => '{{user}} would like to borrow your book, {{book}}'
+        )
+        );
       $message = array(
-        'html' => '<h1>Buwalda Library</h1>
-                 <h2>Someone would like to borrow a book</h2>
-                 <p>' . $user . ' would like to borrow your book, ' . $book . '.</p>
-                 <p>- Buwalda Library</p>
-      ',
         'text' => $user . ' would like to borrow your book, ' . $book . '.',
         'subject' => $user . 'requested to borrow a book.',
         'from_email' => 'hello@buwaldalibrary.com',
@@ -32,6 +33,17 @@ class Mailers extends Controller
             'type' => 'to'
           )
         ),
+        'global_merge_vars' => array(
+          array(
+            'name' => 'user',
+            'content' => $user
+          ),
+          array(
+            'name' => 'book',
+            'content' => $book
+          )
+        )
+        ,
         'headers' => array('Reply-To' => 'hello@buwaldalibrary.com'),
         'important' => false,
         'track_opens' => null,
@@ -46,11 +58,11 @@ class Mailers extends Controller
         'signing_domain' => null,
         'return_path_domain' => null,
         'merge' => true,
-        'merge_language' => 'mailchimp'
+        'merge_language' => 'handlebars'
       );
       $async = false;
       $ip_pool = 'Main Pool';
-      $result = $this->client->messages->send($message, $async, $ip_pool);
+      $result = $this->client->messages->sendTemplate($template_name, $template_content, $message, $async, $ip_pool);
 
       if ($result) {
         return true;
